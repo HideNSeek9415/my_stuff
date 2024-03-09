@@ -13,7 +13,7 @@ fi
 echo ""
 
 #Tim tat ca cac user co ID = 100 va luu vao dsuser
-mkdir -p baitap && touch baitap/duser && grep "x:0:0" /etc/passwd > baitap/dsuser
+mkdir -p baitap && touch baitap/duser && grep "x:100:0" /etc/passwd > baitap/dsuser
 vi baitap/dsuser
 
 vi /etc/group
@@ -62,7 +62,6 @@ usermod -u 0 -o adm1
 usermod -u 0 -o adm2
 
 #Xoa Hoc vien 3 khoi group hocvien
-
 function del_user_in_grp {
 	result=""
 	if ! id -u $1 > /dev/null; then
