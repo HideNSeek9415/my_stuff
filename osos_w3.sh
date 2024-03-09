@@ -71,7 +71,7 @@ function del_user_in_grp {
 	elif ! id -nG "$1" | grep -q "$2"; then
 		result="Nguoi dung $1 khong ton tai trong group $2"
 	else
-		deluser "$1" "$2"
+		userdel -r "$1"
 		result="Da xoa nguoi dung $1 khoi group $2"
 	fi
 	echo "$result"
